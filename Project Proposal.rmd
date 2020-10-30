@@ -1,0 +1,64 @@
+---
+title: 'Project Proposal: Predicting Democratic Backsliding'
+author: "Yousuf Abdelfatah"
+date: "10/30/2020"
+output:
+  html_document:
+    df_print: paged
+  tufte::tufte_handout: default
+  tufte::tufte_html: 
+    tufte_features: ["fonts", "italics"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tufte)
+```
+
+```{css, echo=FALSE}
+h1, h2, h3 {
+  text-align: center;
+}
+```
+
+
+<center> Github Repository: "https://github.com/yousufabdelfatah/Predicting-Democratic-Backsliding.git" </center>
+
+
+## Problem Statement
+
+Much has been made recently of the fact that the global trend towards democracy seems to be reversing and that many countries are experiencing what is known as democratic backsliding. Democratic backsliding, defined as the "state-led debilitation or elimination of the political institutions sustaining an existing democracy," is a catch-all term to describe the various processes by which states move towards more authoritarian forms of governance.[^1] This phenomenon is becoming increasingly common, and the average level of democracy worldwide has slipped to where it was before the year 2000.[^2] In fact, electoral autocracies are now the most common form of government in the world.[^3] The question remains, however: what are the causal factors of democratic backsliding and what indicators can be used to predict whether or not a country will regress farther away from democratic governance? In this analysis I will explore whether economic indicators, such as inequality and poverty levels, and social cohesion indicators, such as trust in government institutions, are effective predictors of whether or not a country will experience backsliding.
+
+## Data Sources and Plan to Obtain the Data 
+I will be using several different sources to obtain the data for this project. The data on governance I will pull from two sources: the Polity Project's Polity 5 data set and the Varieties of Democracy (V-Dem) Institute's V-Dem Index. The Polity 5 data set covers all major states over the period 1800-2018 and measures various qualities of democratic and authoritarian governance for each.[^4] Most importantly for this project, each regime is given a "Polity Score," on a 21 point scale from -10 (hereditary monarchy) to 10 (consolidated democracy). The V-Dem index is a "multidimensional and disaggregated data set that reflects the complexity of the concept of democracy as a system of rule".[^5] It provides indices for features of democracy at various levels of abstraction. I plan to use higher and mid-level indices to quantify changes in governance that go one layer deeper than the polity score, such as freedom of expression and association. To measure democratic backsliding, I will track the change in scores across these two data sets over time. The larger the decrease, the greater the magnitude of the backslide.
+
+Obtaining the economic indicators should be relatively straightforward. I plan to pull them all from the World Bank's Open Data resource. The indicators I will use are change in GDP, change in GDP per capita, change in Gini coefficient, change in percentage of the population living below the poverty line, and the unemployment rate. I do not expect to have to deal with much missing data in this section.   
+
+The social opinion data will be a little harder to pull together. Mainly I plan to pull from three main surveys: the Arab Barometer, the Afro Barometer, and the world values survey. It is likely that some of the countries I’m interested in will not be represented in these surveys or will be missing data for specific questions. In this case, I’ll have to pull from other, possibly country specific surveys, in this case. One of the main challenges here will be aggregating questions across surveys that may be worded differently or have different methodologies behind their collection. To the extent possible I will avoid aggregating differently structured questions and survey results, in order to maintain the robustness of the analysis. 
+
+## Methods 
+The project will consists of three main tasks: The data collection and cleaning task, the model building task, and the creation of data visualizations. The data collection I have discussed above. I will combine the data sets by loading them into a pandas DataFrame and aggregate them by country. For several of the indicators of interest I will ll have to manually calculate their change over time. Using the matplotlib, seaborn, and plotnine packages I will generate graphics that show the relationships between the data. This should provide a preliminary understanding of the relationship between our indicators of interest and the change in the quality of democratic governance. After running the machine learning models, I will also create additional visualizations to show how effectively (or ineffectively) the model was able to make a prediction. 
+
+I will use statistical learning to derive relationships between the dependent variables I have identified and democratic backsliding. To do this, I plan to create three models: one predicting democratic backsliding based on the social cohesion data, one predicting it based on economic growth, and another that combines the two. For each model containing only one feature group I will  go through a process of variable selection where I will first check to make sure that the whole set has some effect. After that I will try to isolate the individual effects, keeping only the variables that seem relevant. In the larger model containing both groups I will attempt to see whether there is cross group interaction, and whether the relevant factors from the individual analysis remain significant in the larger model. 
+
+## Measures of Success
+A successful project is one in which  I will be able to complete 3 tasks. The first of these will be collecting all of the data and combining everything into one DataFrame. The second task will be creating a predictive model which can properly predict whether or not a country will experience democratic backsliding based on a set of factors when applied to a training set. It's possible that I will also get a null result, which would also be enlightening. It's entirely possible that the analysis will find that the factors I am considering do not have a meaningful relationship with the success or failure of democratic governance. In either case, being able to identify which (if any) factors are impactful here will be a success. The last and final measure of success will be my ability to create illustrative visualizations that are easily interpreted by the reader. If I am able to accomplish all three of these tasks then I will consider the project to have been successful.
+
+## Works Cited
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bermeo, Nancy. "On Democratic Backsliding." Journal of Democracy 27, no. 1 (2016): 5-19. doi:10.1353/jod.2016.0012.
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, David Altman, Michael Bernhard, M. Steven Fish, Adam Glynn, Allen Hicken, Anna L¨uhrmann, Kyle L. Marquardt, Kelly McMann, Pamela Paxton, Daniel Pemstein, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning, Jeffrey Staton, Steven Wilson, Agnes Cornell, Nazifa Alizada, Lisa Gastaldi, Haakon Gjerløw, Garry Hindle, Nina Ilchenko, Laura Maxwell, Valeriya Mechkova,
+   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lührman, Anna, Seraphine F. Maerz, Sandra Grahn, Nazifa Alizada, Lisa Gastaldi, Sebastian Hellmeier, Garry Hindle and Staffan I. Lindberg. 2020. Autocratization Surges – Resistance Grows. Democracy Report 2020. Varieties of Democracy Institute (V-Dem).
+   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual. Center for Systemic Peace. http://www.systemicpeace.org/inscr/p5manualv2018.pdf"
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mechkova, Valeriya, Anna Lührmann, and Staffan I. Lindberg. "How Much Democratic Backsliding?" Journal of Democracy 28, no. 4 (2017): 162-169. doi:10.1353/jod.2017.0075.
+
+
+
+[^1]: Nancy Bermeo. "On Democratic Backsliding." Journal of Democracy 27, no. 1 (2016): 5-19. doi:10.1353/jod.2016.0012.
+[^2]: Valeriya Mechkova, Anna Lührmann, and Staffan I. Lindberg. "How Much Democratic Backsliding?" Journal of Democracy 28, no. 4 (2017): 162-169. doi:10.1353/jod.2017.0075.
+[^3]: Anna Lührmann et al. Autocratization Surges – Resistance Grows. Democracy Report 2020. Varieties of Democracy Institute (V-Dem).https://www.v-dem.net/media/filer_public/de/39/de39af54-0bc5-4421-89ae-fb20dcc53dba/democracy_report.pdf 
+[^4]: Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual. Center for Systemic Peace. http://www.systemicpeace.org/inscr/p5manualv2018.pdf"
+[^5]: Michael Coppedge et al., 2020. ”V-Dem [Country–Year/Country–Date] Dataset v10” Varieties of Democracy (V-Dem) Project. https://doi.org/10.23696/vdemds20.
