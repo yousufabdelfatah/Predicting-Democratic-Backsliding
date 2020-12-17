@@ -21,9 +21,15 @@ h1, h2, h3 {
 
 ## 1. Introduction
 
-Much has been made recently of the fact that the global trend towards democracy seems to be reversing and that many countries are experiencing what is known as democratic backsliding. Democratic backsliding, defined as the "state-led debilitation or elimination of the political institutions sustaining an existing democracy," is a catch-all term to describe the various processes by which states move towards more authoritarian forms of governance.[^1] This phenomenon is becoming increasingly common, and the average level of democracy worldwide has slipped to where it was before the year 2000.[^2] In fact, electoral autocracies are now the most common form of government in the world.[^3] The question remains, however: what are the causal factors of democratic backsliding and what indicators can be used to predict whether or not a country will regress farther away from democratic governance? In this analysis I will explore whether 
+The aim of the project is to build a model that can predict democratic backsliding
+
+First we'll go through a brieg background about the issue and the literature on the topic. Then we'll discuss the data sources. Then discuss the analysis and then a discussion of the results. 
 
 ## 2. Problem Statement and Background
+
+Much has been made recently of the fact that the global trend towards democracy seems to be reversing and that many countries are experiencing what is known as democratic backsliding. Democratic backsliding, defined as the "state-led debilitation or elimination of the political institutions sustaining an existing democracy," is a catch-all term to describe the various processes by which states move towards more authoritarian forms of governance.[^1] This phenomenon is becoming increasingly common, and the average level of democracy worldwide has slipped to where it was before the year 2000.[^2] In fact, electoral autocracies are now the most common form of government in the world.[^3] The question remains, however: what are the causal factors of democratic backsliding and what indicators can be used to predict whether or not a country will regress farther away from democratic governance? In this analysis I will explore
+
+Atempts to model global instability have shown that []. 
 
 The goal is to build a model that can accurately predict democratic backsliding. The idea is that if the model can accurately predict incidents of democratic backsliding then based on variable importance we can intuit what causes backsliding. 
 
@@ -33,19 +39,21 @@ Country-year was unit of observation. Country names were standardized using coun
 
 ### 3.1 Dependent variable
 
-To measure democratic backslding, infromation about the level of a country's democracy was pulled from the Polity Project's Polity 5 data set. Measures of democratic backsliding were created by subtracting polity data from the year before. The Polity 5 data set covers all major states over the period 1800-2018 and measures various qualities of democratic and authoritarian governance for each.[^4]  Most importantly for this project, each regime is given a "Polity Score," on a 21 point scale from -10 (hereditary monarchy) to 10 (consolidated democracy). 
+To measure democratic backsliding, information about the level of a country's democracy was pulled from the Polity Project's Polity 5 data set. Measures of democratic backsliding were created by subtracting polity data from the year before. The Polity 5 data set covers all major states over the period 1800-2018 and measures various qualities of democratic and authoritarian governance for each.[^4]  Most importantly for this project, each regime is given a "Polity Score," on a 21 point scale from -10 (hereditary monarchy) to 10 (consolidated democracy). 
 
 Democratic backsliding was calaculate susing year over year difference in the polity score (subtracting from the year before). A negative score meant backsliding. 
 
-### 3.2 Independent variables
+### 3.2 Independent Variables
 Initial plan was to use social cohesion data- not enough
 Instead pulled country-level information on ___ from vdems. The V-Dem index is a "multidimensional and disaggregated data set that reflects the complexity of the concept of democracy as a system of rule".[^5] It provides indices for features of democracy at various levels of abstraction. 
 
 Because the vdems data file was too large to upload to github, I first filtered by year, added decades dumy variables, made the features selection, and then reuploaded that as the file vdem_small. 
 
-I split the v-dem data into 5 "buckets"- 
+I split the v-dem data into 5 "buckets"- civil liberties, civil society, media, access to services, and strife. 
 
-Economic data was pretty sparse so instead I focused on the data that I had. 
+
+The initial intent of the project was to use economic indicators as their own feature bucket. However, in the data collection phase it became clear that economic indicators had a significant amount of missingness. Instead using economic data to control for different effects of vdem factors by size of population and economy. Treating them as control variables now instead of key independent variables. 
+Populatoin Data was sourced from the World Bank and information on GDP and GDP per capita were sourced from gapminder. After 1990, the gapminder data from the world bank, while in the period beforehand it is based on several other source, including Angus maddison.[^6]. Its pre-1990 predictions are not super accurate, however it is far more complete than other available sources and in the interest of maintaing as many observations of backsliding as possible, and because economic indicators were no longer a key feature and instead an identifying characteristic, I felt that mainttaining as many observations as possible was more important.
 
 In order to control for temporal effects I included a decades dummy variable. 
 
@@ -70,6 +78,7 @@ Support Vector Classifier:
 ### 4.2 Metrics
 
 Balanced accuracy:
+
 
 
 
@@ -100,3 +109,4 @@ Balanced accuracy:
 [^3]: Anna Lührmann et al. Autocratization Surges – Resistance Grows. Democracy Report 2020. Varieties of Democracy Institute (V-Dem).https://www.v-dem.net/media/filer_public/de/39/de39af54-0bc5-4421-89ae-fb20dcc53dba/democracy_report.pdf 
 [^4]: Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual. Center for Systemic Peace. http://www.systemicpeace.org/inscr/p5manualv2018.pdf"
 [^5]: Michael Coppedge et al., 2020. ”V-Dem [Country–Year/Country–Date] Dataset v10” Varieties of Democracy (V-Dem) Project. https://doi.org/10.23696/vdemds20.
+[^6]: https://www.gapminder.org/data/documentation/gd001/
