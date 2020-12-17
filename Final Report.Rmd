@@ -1,0 +1,63 @@
+---
+title: "Predicting Democratic Backsliding: Final Report"
+author: "Yousuf"
+date: "12/13/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tufte)
+```
+
+```{css, echo=FALSE}
+h1, h2, h3 {
+  text-align: center;
+}
+```
+
+<center> Github Repository: "https://github.com/yousufabdelfatah/Predicting-Democratic-Backsliding.git" </center>
+
+
+## 1. Introduction
+
+Much has been made recently of the fact that the global trend towards democracy seems to be reversing and that many countries are experiencing what is known as democratic backsliding. Democratic backsliding, defined as the "state-led debilitation or elimination of the political institutions sustaining an existing democracy," is a catch-all term to describe the various processes by which states move towards more authoritarian forms of governance.[^1] This phenomenon is becoming increasingly common, and the average level of democracy worldwide has slipped to where it was before the year 2000.[^2] In fact, electoral autocracies are now the most common form of government in the world.[^3] The question remains, however: what are the causal factors of democratic backsliding and what indicators can be used to predict whether or not a country will regress farther away from democratic governance? In this analysis I will explore whether economic indicators, such as inequality and poverty levels, and social cohesion indicators, such as trust in government institutions, are effective predictors of whether or not a country will experience backsliding.
+
+## 2. Problem Statement and Background
+
+
+## 3. Data
+
+Initial plan was to use social cohesion data- not enough
+Instead pulled from v-dems.
+
+Economic data was pretty sparse so instead I focused on the data that I had. 
+
+In order to control for temporal effects I included a decades dummy variable. 
+
+## 4. Analysis
+
+### 4.1 Classifiers
+
+Naive Bayes:
+
+K Nearest Neighbors:
+
+Decision Tree:
+
+Random Forest:
+
+Support Vector Classifier: 
+
+## 5. Results
+
+
+## 5.1 Discussion of Results
+
+
+
+
+
+
+[^1]: Nancy Bermeo. "On Democratic Backsliding." Journal of Democracy 27, no. 1 (2016): 5-19. doi:10.1353/jod.2016.0012.
+[^2]: Valeriya Mechkova, Anna Lührmann, and Staffan I. Lindberg. "How Much Democratic Backsliding?" Journal of Democracy 28, no. 4 (2017): 162-169. doi:10.1353/jod.2017.0075.
