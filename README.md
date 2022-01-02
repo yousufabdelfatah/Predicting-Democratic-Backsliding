@@ -83,39 +83,6 @@ Of the 3 tasks that I set out for myself I was able to complete 2 of them succes
 
 Given more time or in future iterations of the project, there are some changes and additional analyses that I would like to make. This analysis focuses solely on events within a country. However no country exists in a vacuum. Future iterations of this project should include variables for events in neighboring countries. Additionally, I would like to try different sampling techniques, such as SMOTE sampling. Lastly, I would like to build upon the model so that it includes country-foxed effects. While building the model I had attempted to implement these effects but the addition of 166 extra dummy variables for each bucket made the model freeze. 
 
-## Works Cited
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beger, Andreas, Morgan, Richard K., and Maxwell, Laura, 2020, “The Democratic Spaces Barometer: global forecasts of autocratization and democratization”, https://www.v-dem.net/en/analysis/DemSpace/
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bermeo, Nancy. "On Democratic Backsliding." Journal of Democracy 27, no. 1 (2016): 5-19. doi:10.1353/jod.2016.0012.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bowlsby, D., Chenoweth, E., Hendrix, C., & Moyer, J. (2020). The Future is a Moving Target: Predicting Political Instability. British Journal of Political Science, 50(4), 1405-1417. doi:10.1017/S0007123418000443
-    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coppedge, Michael, John Gerring, Carl Henrik Knutsen, Staffan I. Lindberg, Jan Teorell, David Altman, Michael Bernhard, M. Steven Fish, Adam Glynn, Allen Hicken, Anna L¨uhrmann, Kyle L. Marquardt, Kelly McMann, Pamela Paxton, Daniel Pemstein, Brigitte Seim, Rachel Sigman, Svend-Erik Skaaning, Jeffrey Staton, Steven Wilson, Agnes Cornell, Nazifa Alizada, Lisa Gastaldi, Haakon Gjerløw, Garry Hindle, Nina Ilchenko, Laura Maxwell, Valeriya Mechkova,
-   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kibirige, Hassan, et. al (2020, August 5). has2k1/plotnine: v0.7.1 (Version v0.7.1). Zenodo. http://doi.org/10.5281/zenodo.3973626
-   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lührman, Anna, Seraphine F. Maerz, Sandra Grahn, Nazifa Alizada, Lisa Gastaldi, Sebastian Hellmeier, Garry Hindle and Staffan I. Lindberg. 2020. Autocratization Surges – Resistance Grows. Democracy Report 2020. Varieties of Democracy Institute (V-Dem).
-   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual. Center for Systemic Peace. http://www.systemicpeace.org/inscr/p5manualv2018.pdf"
-    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mechkova, Valeriya, Anna Lührmann, and Staffan I. Lindberg. "How Much Democratic Backsliding?" Journal of Democracy 28, no. 4 (2017): 162-169. doi:10.1353/jod.2017.0075.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lemaitre, Guillaume, Nogueira, Fernando, & Aridas, Christos K. (2017). Imbalanced-learn: A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine LearningJournal of Machine Learning Research, 18(17), 1-5.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marshall, Monty G., Ted Robert Gurr. 2020. "Polity5: Political Regime Characteristics and Transitions, 1800-2018. Dataset Users' Manual. Center for Systemic Peace. http://www.systemicpeace.org/inscr/p5manualv2018.pdf"
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;McKinney, W., et al (2010). Data structures for statistical computing in python. In Proceedings of the 9th Python in Science Conference (Vol. 445, pp. 51–56)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pedregosa, F., et al. (2011). Scikit-learn: Machine Learning in Pytho nJournal of Machine Learning Research, 12, 2825–2830.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stadler, K. (2017). The country converter coco - a Python package for converting country names between different classification schemes. The Journal of Open Source Software. doi: 10.21105/joss.00332
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The World Bank, World Development Indicators (2012). Population, total [Data file]. Retrieved from https://data.worldbank.org/indicator/SP.POP.TOTL
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waksom, Michael, et al. (2020, September 8). mwaskom/seaborn: v0.11.0 (Sepetmber 2020) (Version v0.11.0). Zenodo. http://doi.org/10.5281/zenodo.4019146
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waldner, David & Lust, Ellen. (2018). "Unwelcome Change: Coming to Terms with Democratic Backsliding". Annual Review of Political Science. 21. 10.1146/annurev-polisci-050517-114628. 
-
 
 [^1]: Nancy Bermeo. "On Democratic Backsliding." Journal of Democracy 27, no. 1 (2016): 5-19. doi:10.1353/jod.2016.0012.
 [^2]: Valeriya Mechkova, Anna Lührmann, and Staffan I. Lindberg. "How Much Democratic Backsliding?" Journal of Democracy 28, no. 4 (2017): 162-169. doi:10.1353/jod.2017.0075.
